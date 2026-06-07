@@ -34,7 +34,7 @@ import recordsIcon from "../assets/images/tabBar/records.png";
 import CustomerServiceModal from "../components/CustomerServiceModal";
 
 // ---- Updated: Use your custom API domain ----
-const API_URL = "https://stacksapp-backend.onrender.com";
+const API_URL = "https://earthbound-admin.onrender.com";
 
 // The teal/green used everywhere (replaces previous blue)
 const START_BLUE = "#2f8b82";
