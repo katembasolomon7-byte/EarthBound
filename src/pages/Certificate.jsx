@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import cert1 from "../assets/images/certificates/certificate1.png";
-import cert2 from "../assets/images/certificates/certificate2.png";
+import cert1 from "../assets/images/certificates/Certificate01.png";
+import cert2 from "../assets/images/certificates/Certificate02.png";
 
 const START_BLUE = "#2f8b82";
 
