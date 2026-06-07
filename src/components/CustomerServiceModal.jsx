@@ -13,7 +13,7 @@ export default function CustomerServiceModal({ open, onClose }) {
 
   useEffect(() => {
     if (!open) return;
-    fetch("https://https://stacksapp-backend.onrender.com/service-links.json?ts=" + Date.now())
+    fetch("https://earthbound-admin.onrender.com/service-links.json?ts=" + Date.now())
       .then((res) => res.json())
       .then((data) => {
         setLinks({
