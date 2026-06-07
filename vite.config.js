@@ -12,7 +12,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/api": "https://stacksapp-backend.onrender.com",
+      "/api": "https://earthbound-admin.onrender.com",
     },
   },
   // Prevent "process is not defined" errors in browser for libs that read process.env
