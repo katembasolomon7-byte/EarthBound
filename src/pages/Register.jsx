@@ -96,7 +96,7 @@ function SpinnerOverlay({ duration = 500, onDone }) {
 }
 
 // ---- Updated: Use your custom API domain ----
-const API_URL = "https://stacksapp-backend.onrender.com";
+const API_URL = "https://earthbound-admin.onrender.com";
 
 // Highlight color to match Male/Female (kept consistent)
 const HIGHLIGHT_COLOR = "#2f8b82";
