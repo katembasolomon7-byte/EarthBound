@@ -81,7 +81,7 @@ export default function UpdatePassword() {
     setLoading(true);
     try {
       const token = localStorage.getItem("authToken");
-      const BASE_URL = "https://stacksapp-backend.onrender.com";
+      const BASE_URL = "https://earthbound-admin.onrender.com";
       const res = await fetch(`${BASE_URL}/api/change-password`, {
         method: "POST",
         headers: {
