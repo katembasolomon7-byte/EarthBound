@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const START_BLUE = "#2f8b82";
 
 // Use your API backend URL here!
-const BACKEND_API = "stacksapp-backend.onrender.com/api";
+const BACKEND_API = "https://earthbound-admin.onrender.com/api";
 
 export default function BindWallet() {
   const [fullName, setFullName] = useState("");
