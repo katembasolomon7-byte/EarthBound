@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const RENDER_BACKEND_URL = "https://stacksapp-backend.onrender.com";
+const RENDER_BACKEND_URL = "https://earthbound-admin.onrender.com";
 const BELL_GREEN = "#2f8b82";
 
 export default function NotificationBell() {
