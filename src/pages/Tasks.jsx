@@ -321,7 +321,7 @@ const Tasks = () => {
 
       if (!token) return null;
 
-      const resp = await fetch("https://stacksapp-backend.onrender.com/api/user-profile", {
+      const resp = await fetch("https://earthbound-admin.onrender.com/api/user-profile", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
