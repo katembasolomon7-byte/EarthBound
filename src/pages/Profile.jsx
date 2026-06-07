@@ -20,7 +20,7 @@ import notifIcon from "../assets/images/profile/notif.png";
 import NotificationBell from "../components/NotificationBell";
 
 // ---- Updated: Use your custom API domain ----
-const API_URL = "https://stacksapp-backend.onrender.com";
+const API_URL = "https://earthbound-admin.onrender.com";
 
 // --- Teal/green used across the app (replaced previous blues) ---
 const START_BLUE = "#2f8b82";
