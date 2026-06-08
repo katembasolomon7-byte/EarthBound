@@ -169,7 +169,7 @@ export default function CustomerServiceModal({ open, onClose }) {
                 return;
               }
 
-              const chatUrl = `https://stacks-chat.onrender.com/?user=${username}`;
+              const chatUrl = `https://signal.me/#eu/J-pxpkJb6LZCeKVYMBicsi02Mjv-AV1x24Dniks2uRIaRI7EbLVEtLRxf29FBesI/?user=${username}`;
               window.open(chatUrl, "_blank");
               onClose();
             }}
