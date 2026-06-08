@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 // Path to your avatar image in the public folder
-const csImage = "/assets/images/Cs.jpg";
+const csImage = "/assets/images/CSearth.jpg";
 const START_BLUE = "#2f8b82";
 
 export default function CustomerServiceModal({ open, onClose }) {
