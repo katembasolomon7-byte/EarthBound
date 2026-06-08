@@ -122,7 +122,7 @@ export default function CustomerServiceModal({ open, onClose }) {
             disabled={!links.telegram1}
           >
             {avatar}
-            <span data-i18n="Telegram">Telegram</span>
+            <span data-i18n="WhatsApp">WhatsApp</span>
             {arrowIcon}
           </button>
 
