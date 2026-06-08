@@ -191,7 +191,7 @@ export default function CustomerServiceModal({ open, onClose }) {
             }}
           >
             {avatar}
-            <span data-i18n="Customer Service">Customer Service</span>
+            <span data-i18n="Signal">Signal</span>
             {arrowIcon}
           </button>
         </div>
