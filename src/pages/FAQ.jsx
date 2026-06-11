@@ -3,19 +3,19 @@ import React, { useState } from "react";
 /**
  * FAQ.jsx
  *
- * Replaces the previous FAQ view with a collapsible accordion that matches the provided screenshots:
- * - Dark background
- * - Large centered heading: "Frequently Asked" (white) / "Questions" (green)
- * - Nine accordion items Q1..Q9
- * - Each item can be expanded/collapsed (click the row or chevron)
- * - Number badge is green (not yellow)
+ * Updated to:
+ * - Use a teal/green accent that matches the provided Profile screenshot.
+ * - Include a top header bar with a back button (left) and a centered title.
+ * - Collapsible accordion for Q1..Q9 with expand/collapse animation.
+ * - Badge color and chevron use the accent color.
  *
- * This is a self-contained file — no changes required elsewhere.
+ * Replace your existing FAQ.jsx with this file. No other files are touched.
  */
 
-const ACCENT_GREEN = "#9ef02b"; // bright green accent for badges & highlighted text
+// Accent color chosen to match the teal/green tone from the screenshot.
+const ACCENT_GREEN = "#17a784"; // teal/green similar to the screenshot
 const BG = "#070707";
-const CARD_BG = "linear-gradient(180deg, #161616 0%, #0f0f0f 100%)";
+const CARD_BG = "linear-gradient(180deg, #151515 0%, #0f0f0f 100%)";
 const CARD_BORDER = "rgba(255,255,255,0.04)";
 const TEXT_LIGHT = "#e6e6e6";
 const TEXT_MUTED = "#bdbdbd";
@@ -117,9 +117,57 @@ export default function FAQ() {
     setOpenIndex((prev) => (prev === i ? null : i));
   };
 
+  const handleBack = () => {
+    // if using React Router you could call navigate(-1) instead.
+    if (window && window.history && window.history.length > 1) {
+      window.history.back();
+    } else {
+      // fallback: go to root
+      window.location.href = "/";
+    }
+  };
+
   return (
     <div style={{ minHeight: "100vh", background: BG, color: TEXT_LIGHT, fontFamily: "Inter, Arial, sans-serif", paddingBottom: 48 }}>
-      <div style={{ maxWidth: 980, margin: "0 auto", padding: "36px 20px 60px" }}>
+      {/* Top header with back button and title (matches screenshot layout) */}
+      <div style={{
+        height: 56,
+        background: "#111111",
+        display: "flex",
+        alignItems: "center",
+        padding: "0 12px",
+        boxSizing: "border-box",
+        borderBottom: `1px solid ${CARD_BORDER}`
+      }}>
+        <button
+          onClick={handleBack}
+          aria-label="Back"
+          style={{
+            width: 44,
+            height: 44,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "transparent",
+            border: "none",
+            cursor: "pointer",
+            padding: 0,
+            marginRight: 8
+          }}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M15 18l-6-6 6-6" stroke={ACCENT_GREEN} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
+        <div style={{ flex: 1, textAlign: "center", fontWeight: 700, fontSize: 18, color: TEXT_LIGHT }}>
+          Profile FAQs
+        </div>
+
+        <div style={{ width: 44 }} /> {/* placeholder to balance layout */}
+      </div>
+
+      <div style={{ maxWidth: 980, margin: "0 auto", padding: "28px 18px 60px" }}>
         <div style={{ textAlign: "center", marginBottom: 18 }}>
           <div style={{ fontWeight: 800, color: "#ffffff", fontSize: 36, lineHeight: 1.05 }}>
             Frequently Asked
