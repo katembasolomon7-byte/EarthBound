@@ -73,7 +73,7 @@ const faqs = [
     title: "VI.Combo product mission",
     content: [
       "6.1) Combo mission consists of 2 brand tasks. Within a set of tasks, the system randomly matches based on the user's balance, and the commissions will be superimposed. Every time a user completes a combo mission, the user will get a generous commission reward.",
-      "6.2) The commission for each product in a combo mission will be 20 times higher than that of a regular task. The specific amount depends on the user's level and the value of the task obtained.",
+      "6.2) The commission for each product in a combo mission will be 6 times higher than that of a regular task. The specific amount depends on the user's level and the value of the task obtained.",
       "6.3) The system will randomly assign combo mission based on the total balance of the user's account. After completing the combo mission, you can submit the order in the order details, and all funds will be returned to the account. After completing the remaining tasks, you can apply for withdrawal.",
       "6.4) Once a combo mission is assigned to a user account, it cannot be cancelled or skipped.",
       "6.5) The recharge amount is chosen by the user; we cannot decide the deposit amount for the user. However, the recharge amount must be in accordance with the platform's requirements.",
