@@ -238,8 +238,11 @@ async function fetchCloudinaryTagList(tag = CLOUDINARY_TAG) {
   }
 }
 
+// NOTE: changed fallback to local images only (public/assets/images/product1(42).png ... product1(100).png)
 function makeFallbackImageList() {
-  return Array.from({ length: totalImages }, (_, i) => `${CLOUDINARY_BASE}product1_${i + imageStart}.jpg`);
+  const start = 42;
+  const end = 100; // limit to 100 per request
+  return Array.from({ length: end - start + 1 }, (_, i) => `/assets/images/product1(${i + start}).png`);
 }
 
 // --- Component starts ---
@@ -456,34 +459,16 @@ const Tasks = () => {
 
     async function loadPool() {
       try {
-        // Try static JSON first
-        const fromStatic = await fetchAssetsFromStaticJson(1000);
+        // LOCAL-ONLY: use images from public/assets/images/product1(42).png .. product1(100).png
+        const start = 42;
+        const end = 100;
+        const localList = Array.from({ length: end - start + 1 }, (_, i) => `/assets/images/product1(${i + start}).png`);
+        const shuffledPool = shuffle([...localList]);
         if (cancelled) return;
-        if (fromStatic && fromStatic.length) {
-          const shuffledPool = shuffle([...fromStatic]);
-          setCloudinaryPool(shuffledPool);
-          setProductGridCandidates(shuffledPool);
-          try { localStorage.setItem("productGridCache", JSON.stringify(shuffledPool)); } catch (e) {}
-          return;
-        }
-
-        // Tag list fallback
-        const tagUrls = await fetchCloudinaryTagList(CLOUDINARY_TAG);
-        if (cancelled) return;
-        if (tagUrls && tagUrls.length) {
-          const shuffledTagPool = shuffle([...tagUrls]);
-          setCloudinaryPool(shuffledTagPool);
-          setProductGridCandidates(shuffledTagPool);
-          try { localStorage.setItem("productGridCache", JSON.stringify(shuffledTagPool)); } catch (e) {}
-          return;
-        }
-
-        // final fallback pattern
-        const fallback = makeFallbackImageList();
-        const shuffledFallback = shuffle([...fallback]);
-        setCloudinaryPool(shuffledFallback);
-        setProductGridCandidates(shuffledFallback);
-        try { localStorage.setItem("productGridCache", JSON.stringify(shuffledFallback)); } catch (e) {}
+        setCloudinaryPool(shuffledPool);
+        setProductGridCandidates(shuffledPool);
+        try { localStorage.setItem("productGridCache", JSON.stringify(shuffledPool)); } catch (e) {}
+        return;
       } catch (err) {
         console.warn('Product pool load failed:', err);
       }
@@ -716,7 +701,10 @@ const Tasks = () => {
   }
 
   function imageListFallback() {
-    return Array.from({ length: totalImages }, (_, i) => `${CLOUDINARY_BASE}product1_${i + imageStart}.jpg`);
+    // Use the same local-only range as the fallback
+    const start = 42;
+    const end = 100;
+    return Array.from({ length: end - start + 1 }, (_, i) => `/assets/images/product1(${i + start}).png`);
   }
 
   const handleGridImgError = (e, index) => {
